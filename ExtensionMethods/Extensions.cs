@@ -23,6 +23,28 @@ namespace ExtensionMethods
             }
         }
 
+        public static int ToInt<T>(this T val) where T:struct
+        {
+            try
+            {
+                Type type = typeof(T);
+
+                if (type == typeof(string)) 
+                    return -100;
+                if (val is double)
+                {
+                    int x = int.Parse(val.ToString());
+                    return Convert.ToInt32(x +1 );
+                }
+               return Convert.ToInt32(val);
+            }
+            catch (Exception ex)
+
+            {
+                return -1;
+            }
+        }
+
         public static int ToInt1(String val)
         {
             try

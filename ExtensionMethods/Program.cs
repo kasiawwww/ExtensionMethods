@@ -8,13 +8,20 @@ namespace ExtensionMethods
 {
     class Program
     {
+        class Roman
+        {
+            public int MyProperty { get; set; }
+        }
         static void Main(string[] args)
         {
 
             string number = "3";
+            double num = 56.14;
             int n = Extensions.ToInt(number);
             int n2 = number.ToInt(); // metoda rozszerzająca - > nie podajemy parametru "this"; kazdy string ma metodę toint
 
+            int n3 = number.ToInt();
+            int n4 = num.ToInt<double>();
             int n1 = Extensions.ToInt(number);
             string z = 20.ToString();
 
@@ -34,6 +41,11 @@ namespace ExtensionMethods
             Console.WriteLine(text.Left(5));
             Console.WriteLine(n);
             Console.WriteLine(n2);
+
+            Console.WriteLine("---------------");
+            Console.WriteLine(n3);
+            Console.WriteLine(n4);
+
             Console.Read();
 
 
